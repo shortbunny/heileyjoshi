@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,50 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+:root {
+  --bg-main: #f1e8c7;
+
+  --text-primary: #9ca764;
+  --text-secondary: #cf7486;
+
+  /* --text-muted: rgba(63, 107, 91, 0.6); */
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  color: var(--text-primary);
+}
+
+.nav-links li {
+  color: var(--text-secondary);
+}
+
+.nav-links li:hover {
+  opacity: 0.6;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+h1, h2, h3 {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+p {
+  color: var(--text-secondary);
+  max-width: 600px;
 }
