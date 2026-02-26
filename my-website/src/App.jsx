@@ -1,8 +1,20 @@
-import Hero from "./components/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Work from "./components/Work";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
-      <Hero />
+    <BrowserRouter>
+      <Navbar />
+      <AnimatePresence mode="wait">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work/:slug" element={<Work />} />
+      </Routes>
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 
