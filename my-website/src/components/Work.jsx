@@ -37,7 +37,11 @@ const Work = () => {
   const project = workData[slug];
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 0);
+  
+    return () => clearTimeout(timer);
   }, [slug]);
 
   if (!project) return <div className="work">Project not found.</div>;
