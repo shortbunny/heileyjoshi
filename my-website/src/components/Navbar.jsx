@@ -1,22 +1,27 @@
 import React from "react";
 import "../index.css";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="navbar">
-      <div className="nav-inner">
-        <a href="/" className="logo">
-          heiley
-        </a>
-
-        <div className="nav-links">
-          <a href="#projects">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <Link to="/" className="logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        Heiley
+      </Link>
+      <div className="nav-links">
+        <button onClick={() => scrollToSection("about")}>About</button>
+        <button onClick={() => scrollToSection("projects")}>Work</button>
+        <button onClick={() => scrollToSection("cta")}>Contact</button>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

@@ -24,8 +24,7 @@ const Home = () => {
         <motion.p
           className="hero-eyebrow"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           Hello, I’m
@@ -50,15 +49,15 @@ const Home = () => {
         </motion.p>
 
         <div className="hero-actions">
-          <a href="#projects" className="btn primary">View Work</a>
-          <a href="#about" className="btn secondary">About Me</a>
+          <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="btn primary">View Work</button>
+          <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="btn secondary">About Me</button>
         </div>
       </section>
 
       <motion.p
         className="scroll-hint"
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         Browse Work <span className="arrow">↓</span>
@@ -68,7 +67,7 @@ const Home = () => {
       <section className="features">
         <Feature title="Product Thinking" text="I build solutions, not just features." />
         <Feature title="System Design" text="Scalable, thoughtful architecture." />
-        <Feature title="Creative Flair" text="Because software should feel human." />
+        <Feature title="Creative Side" text="Because software should feel human." />
       </section>
 
       {/* PROJECTS */}
@@ -77,10 +76,10 @@ const Home = () => {
 
         <div className="project-grid">
           <ProjectCard
-            title="COJ Platform"
-            desc="A job-matching system connecting students & clients."
-            tags={["React", "Node", "System Design"]}
-            link="/work/coj"
+            title="Outfitted Webapp"
+            desc="A platform for everyone, providing digital wordrobe."
+            tags={["React", "Django", "System Design"]}
+            link="/work/outfitted"
           />
 
           <ProjectCard
@@ -89,19 +88,13 @@ const Home = () => {
             tags={["APIs", "Architecture", "Security"]}
             link="/work/airwallex"
           />
-
-          <ProjectCard
-            title="Data Intelligence Suite"
-            desc="Predictive analytics platform using regression & clustering."
-            tags={["Python", "ML", "Data Science"]}
-            link="/work/data"
-          />
         </div>
 
       </section>
 
       {/* ABOUT */}
       <motion.section
+        id="about"
         className="about"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +111,7 @@ const Home = () => {
       </motion.section>
 
       {/* CTA */}
-      <section className="cta">
+      <section id="cta" className="cta">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,6 +130,8 @@ const Home = () => {
         <motion.a
           href="mailto:heileyvjoshi@gmail.com"
           className="cta-btn"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05, boxShadow: "0 12px 30px rgba(207,116,134,0.3)" }}
           transition={{ type: "spring", stiffness: 200 }}
         >
@@ -145,11 +140,11 @@ const Home = () => {
       </section>
 
       <footer className="footer">
-        <p>© 2026 Heiley Joshi. All rights reserved.</p>
+        <p>© 2026 Heiley Joshi.</p>
         <p>
-          <a href="mailto:heileyvjoshi@gmail.com">Email</a> |
-          <a href="https://linkedin.com/in/heileyjoshi">LinkedIn</a> |
-          <a href="https://github.com/heileyjoshi">GitHub</a>
+          <a href="mailto:heileyvjoshi@gmail.com" target="_blank" rel="noopener noreferrer">Email</a> |
+          <a href="https://www.linkedin.com/in/heiley-joshi/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+          <a href="https://github.com/shortbunny" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
       </footer>
 

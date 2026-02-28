@@ -2,15 +2,16 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../index.css";
+import { useEffect } from "react";
 
 const workData = {
-  coj: {
-    title: "COJ — Student Job Matching Platform",
-    subtitle: "A full-stack platform connecting students with clients using intelligent matching workflows.",
-    problem: "Students struggle to find relevant work, while companies struggle to efficiently identify suitable candidates.",
-    solution: "Designed and implemented a scalable job matching platform with structured workflows, intelligent filtering, and clean system architecture.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "REST APIs", "Authentication", "System Design"],
-    impact: "Streamlined the hiring process, reduced friction for students, and enabled scalable growth for future expansion.",
+  outfitted: {
+    title: "Outfitted — Digital Wardrobe & Outfit Planner",
+    subtitle: "A collaborative web app for managing clothing, creating outfits, and planning looks with ease.",
+    problem: "People struggle to organize their wardrobe and plan outfits efficiently, leading to wasted time and missed styling opportunities.",
+    solution: "Developed as part of a team project, this platform lets users upload items, organize them into collections, create and save outfits, tag items for easy search, and plan looks on a calendar for future use.",
+    tech: ["React", "Django", "JavaScript", "Nginx", "AWS", "REST APIs", "Authentication", "System Design"],
+    impact: "Enabled users to organize their wardrobe digitally, streamline outfit planning, and enjoy a seamless, convenient styling experience on the go.",
   },
   airwallex: {
     title: "Mini Airwallex — Fintech Transaction Engine",
@@ -19,14 +20,6 @@ const workData = {
     solution: "Built a modular transaction pipeline with API-based architecture and scalable processing layers.",
     tech: ["Node.js", "Express", "PostgreSQL", "REST APIs", "System Architecture", "Security Design"],
     impact: "Demonstrated how high-volume financial transactions can be processed efficiently while maintaining reliability and security.",
-  },
-  data: {
-    title: "Data Intelligence Suite",
-    subtitle: "A predictive analytics system for uncovering trends using regression and clustering.",
-    problem: "Raw data is difficult to interpret without structured analysis and predictive models.",
-    solution: "Built data pipelines and predictive models to surface meaningful insights and trends.",
-    tech: ["Python", "Machine Learning", "Regression", "Clustering", "Data Visualization"],
-    impact: "Enabled data-driven decision-making and clear visual communication of complex insights.",
   },
 };
 
@@ -42,6 +35,10 @@ const itemVariants = {
 const Work = () => {
   const { slug } = useParams();
   const project = workData[slug];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [slug]);
 
   if (!project) return <div className="work">Project not found.</div>;
 
