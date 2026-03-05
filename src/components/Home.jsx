@@ -16,6 +16,25 @@ const Home = () => {
     </Link>
   );
 
+  const InternshipCard = ({ role, company, duration, points }) => (
+    <motion.div
+      className="internship-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h3>{role}</h3>
+      <p className="company">{company}</p>
+      <p className="duration">{duration}</p>
+      <ul>
+        {points.map((point, i) => (
+          <li key={i}>{point}</li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+
   return (
     <main className="home">
 
@@ -90,6 +109,36 @@ const Home = () => {
           />
         </div>
 
+      </section>
+
+      {/* INTERNSHIPS */}
+      <section id="internships" className="internships">
+        <h2 className="section-title">Internships</h2>
+
+        <div className="internship-grid">
+          <InternshipCard
+            role="Remote Web Development Intern"
+            company="Teles Technological Services LLP"
+            duration="Dec 2024 - Feb 2025"
+            points={[
+              "Developed and launched production-ready full-stack web applications with React, Node.js, Express.js, and MySQL.",
+              "Designed RESTful APIs and optimized UI components for responsiveness and performance.",
+              "Led feature development from database design to frontend integration, ensuring scalable and maintainable code."
+            ]}
+          />
+
+          <InternshipCard
+            role="Software Intern"
+            company="Silver Touch Technologies Ltd"
+            duration="Dec 2023 - Jan 2024"
+            points={[
+              "Created Java-based modules using object-oriented principles for internal team projects.",
+              "Assisted with backend component testing, debugging, and optimization.",
+              "Worked in an agile environment alongside senior developers.",
+              "Improved knowledge of version control, software architecture, and clean coding techniques."
+            ]}
+          />
+        </div>
       </section>
 
       {/* ABOUT */}
