@@ -1,160 +1,81 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { motion } from "framer-motion";
-import "../index.css";
-import { useEffect } from "react";
+import { C, D } from "../theme";
+import Asterisk from "./Asterisk";
+import WorkEntry from "./WorkEntry";
+import Reveal from "./Reveal";
 
-const workData = {
-  outfitted: {
-    title: "Outfitted — Digital Wardrobe & Outfit Planner",
-    subtitle: "A collaborative web app for managing clothing, creating outfits, and planning looks with ease.",
-    problem: "People struggle to organize their wardrobe and plan outfits efficiently, leading to wasted time and missed styling opportunities.",
-    solution: "Developed as part of a team project, this platform lets users upload items, organize them into collections, create and save outfits, tag items for easy search, and plan looks on a calendar for future use.",
-    tech: ["React", "Django", "JavaScript", "Nginx", "AWS", "REST APIs", "Authentication", "System Design"],
-    impact: "Enabled users to organize their wardrobe digitally, streamline outfit planning, and enjoy a seamless, convenient styling experience on the go.",
+const ENTRIES = [
+  {
+    title: "Software Consulting Intern",
+    company: "Jacaranda Flame Consulting (Chiefy.ai)",
+    period: "Jun to Jul 2026",
+    index: 1,
+    bullets: [
+      "Built core leaderboard, points, and wager mechanic systems for First on the Tools, designing scoring logic informed by user engagement data to drive daily retention.",
+      "Implemented daily drop, mascot popup, and result card features using React and TypeScript.",
+      "Built the supporting backend functionality using the Django framework and a Supabase database.",
+      "Migrated the app's entire data layer from local storage to Supabase after 80% of development was already complete, improving scalability without disrupting existing features.",
+    ],
   },
-  airwallex: {
-    title: "Mini Airwallex — Fintech Transaction Engine",
-    subtitle: "A simplified payment processing engine focused on performance, scalability, and security.",
-    problem: "Modern fintech platforms require fast, reliable, and secure transaction processing systems.",
-    solution: "Built a modular transaction pipeline with API-based architecture and scalable processing layers.",
-    tech: ["Node.js", "Express", "PostgreSQL", "REST APIs", "System Architecture", "Security Design"],
-    impact: "Demonstrated how high-volume financial transactions can be processed efficiently while maintaining reliability and security.",
+  {
+    title: "Remote Web Dev Intern",
+    company: "Teles Technological Services LLP",
+    period: "Dec 2024 to Feb 2025",
+    index: 2,
+    bullets: [
+      "Developed and launched two production-ready full-stack apps using React, Node.js, Express.js, and MySQL.",
+      "Designed and implemented RESTful APIs from scratch to support core functionality and real-time data flow.",
+      "Led feature development end-to-end alongside a teammate from design to production.",
+    ],
   },
-};
+  {
+    title: "Software Intern",
+    company: "Silver Touch Technologies Ltd",
+    period: "Dec 2023 to Jan 2024",
+    index: 3,
+    bullets: [
+      "Built Java-based modules using OOP principles to support ongoing internal projects and tooling.",
+      "Collaborated closely with senior developers in an agile environment.",
+    ],
+  },
+];
 
-// Motion variants
-const containerVariants = {
-  show: { transition: { staggerChildren: 0.15 } }
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120 } }
-};
-
-const Work = () => {
-  const { slug } = useParams();
-  const project = workData[slug];
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }, 0);
-  
-    return () => clearTimeout(timer);
-  }, [slug]);
-
-  if (!project) return <div className="work">Project not found.</div>;
-
-  const { title, subtitle, problem, solution, tech, impact } = project;
-
+export default function Work() {
   return (
-    <motion.main
-      className="work"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* HERO */}
-      <motion.section
-        className="project-hero"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.1, duration: 0.6 }}
-      >
-        <p className="project-eyebrow">Selected Work</p>
-        <div className="section-divider"></div>
-        {/* Bouncing title letters */}
-        <h1>
-          {title.split("").map((char, i) => (
-            <motion.span
-              key={i}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: i * 0.05 }}
-            >
-              {char}
-            </motion.span>
-          ))}
-        </h1>
-        <p className="project-subtitle">{subtitle}</p>
-
-        {/* Scroll hint */}
-        <motion.p
-          className="scroll-hint"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+    <section id="work" className="relative overflow-hidden snap-stop" style={{ background: C.cream }}>
+      <div className="max-w-[1400px] mx-auto px-8 md:px-14 py-20 md:py-28">
+        <span
+          className="absolute right-0 top-8 select-none pointer-events-none leading-none"
+          style={D({ fontWeight: 900, fontSize: "clamp(180px,30vw,440px)", color: C.creamDark, letterSpacing: "-0.05em", opacity: 0.7 })}
+          aria-hidden
         >
-          Browse Project <span className="arrow">↓</span>
-        </motion.p>
-      </motion.section>
+          03
+        </span>
 
-      {/* PROBLEM */}
-      <motion.section
-        className="project-section"
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>The Problem</h2>
-        <p>{problem}</p>
-      </motion.section>
+        <div className="relative z-10">
+          <Reveal className="flex items-end justify-between mb-14 md:mb-16">
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <Asterisk size={18} color={C.pop} />
+                <span className="text-xs uppercase tracking-[0.2em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
+                  Experience
+                </span>
+              </div>
+              <h2 className="leading-none uppercase" style={D({ fontWeight: 900, fontSize: "clamp(48px,8vw,112px)", letterSpacing: "-0.04em" })}>
+                Work<span style={{ color: C.pop }}>.</span>
+              </h2>
+            </div>
+            <p className="hidden md:block text-xs opacity-30 pb-4" style={D({ fontWeight: 700, fontSize: 10 })}>
+              click to expand
+            </p>
+          </Reveal>
 
-      {/* SOLUTION */}
-      <motion.section
-        className="project-section highlight"
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>The Solution</h2>
-        <p>{solution}</p>
-      </motion.section>
-
-      {/* TECH */}
-      <motion.section
-        className="project-section"
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>Tech & Architecture</h2>
-        <motion.ul
-          className="tech-list"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
-          {tech.map((t, i) => (
-            <motion.li
-              key={i}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -2, textShadow: "0px 0px 8px rgba(207,116,134,0.5)" }}
-            >
-              {t}
-            </motion.li>
-          ))}
-        </motion.ul>
-      </motion.section>
-
-      {/* IMPACT */}
-      <motion.section
-        className="project-section highlight"
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>Impact</h2>
-        <p>{impact}</p>
-      </motion.section>
-    </motion.main>
+          <div style={{ borderTop: `1px solid ${C.ink}` }}>
+            {ENTRIES.map((e) => (
+              <WorkEntry key={e.title} {...e} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
-};
-
-export default Work;
+}
