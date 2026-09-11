@@ -1,4 +1,4 @@
-import { C, D } from "../theme";
+import { C, D, BODY_FONT } from "../theme";
 import Asterisk from "./Asterisk";
 import WorkEntry from "./WorkEntry";
 import Reveal from "./Reveal";
@@ -56,7 +56,7 @@ export default function Work() {
             <div>
               <div className="flex items-center gap-3 mb-5">
                 <Asterisk size={18} color={C.pop} />
-                <span className="text-xs uppercase tracking-[0.2em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
+                <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
                   Experience
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function Work() {
                 Work<span style={{ color: C.pop }}>.</span>
               </h2>
             </div>
-            <p className="hidden md:block text-xs opacity-30 pb-4" style={D({ fontWeight: 700, fontSize: 10 })}>
+            <p className="hidden md:block text-xs opacity-50 pb-4" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
               click to expand
             </p>
           </Reveal>

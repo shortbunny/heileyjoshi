@@ -16,13 +16,10 @@ export default function Hero() {
         01
       </span>
 
-      <div className="flex items-center justify-between relative z-10">
-        <span className="text-xs uppercase tracking-[0.18em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
-          Portfolio, 2026
-        </span>
+      <div className="flex items-center justify-end relative z-10">
         <div className="flex items-center gap-2">
           <Asterisk size={14} color={C.pop} />
-          <span className="text-xs uppercase tracking-[0.18em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
+          <span className="text-xs uppercase tracking-[0.18em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
             Sydney, AU
           </span>
         </div>
@@ -47,15 +44,15 @@ export default function Hero() {
               fontWeight: 900,
               fontSize: "clamp(60px,17vw,252px)",
               letterSpacing: "-0.01em",
-              WebkitTextStroke: "2.5px " + C.ink,
+              WebkitTextStroke: "clamp(1.4px, 0.5vw, 2.5px) " + C.ink,
               color: "transparent",
             })}
           >
             Joshi
           </h1>
           <span
-            className="hidden md:block pb-3 text-xs uppercase tracking-[0.3em] opacity-40"
-            style={D({ fontWeight: 700, writingMode: "vertical-rl", fontSize: 9, letterSpacing: "0.3em" })}
+            className="hidden md:block pb-1 text-xs uppercase tracking-[0.3em] opacity-60"
+            style={D({ fontFamily: BODY_FONT, fontWeight: 700, writingMode: "vertical-rl", fontSize: 10, letterSpacing: "0.3em" })}
           >
             Univ. of Sydney · 2026
           </span>
@@ -67,10 +64,10 @@ export default function Hero() {
           Building agentic AI systems and full-stack products.
           <br />Honours thesis in progress: RAG and knowledge graphs.
         </p>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a
             href="#work"
-            className="text-xs uppercase tracking-widest px-7 py-3 transition-all"
+            className="text-xs uppercase tracking-widest px-5 py-2.5 md:px-7 md:py-3 transition-all"
             style={D({
               fontWeight: 800,
               fontSize: 11,
@@ -86,7 +83,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="text-xs uppercase tracking-widest px-7 py-3 border-2 transition-all"
+            className="text-xs uppercase tracking-widest px-5 py-2.5 md:px-7 md:py-3 border-2 transition-all"
             style={D({ fontWeight: 800, fontSize: 11, letterSpacing: "0.12em", borderColor: C.ink })}
             onMouseEnter={(e) => { e.currentTarget.style.background = C.ink; e.currentTarget.style.color = C.cream; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = ""; e.currentTarget.style.color = ""; }}

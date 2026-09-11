@@ -12,8 +12,8 @@ const LEADERSHIP = [
 export default function Extra() {
   return (
     <section
-  className="relative overflow-hidden snap-stop flex items-center"
-  style={{ background: C.cream, minHeight: "85vh" }}
+  className="relative overflow-hidden snap-stop"
+  style={{ background: C.cream }}
 >
       <span
         className="absolute right-0 top-8 select-none pointer-events-none leading-none"
@@ -28,7 +28,7 @@ export default function Extra() {
           <Reveal className="pb-12 md:pb-0 md:pr-16">
             <div className="flex items-center gap-3 mb-7">
               <Asterisk size={16} color={C.pop} />
-              <span className="text-xs uppercase tracking-[0.2em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
+              <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
                 Education
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function Extra() {
           <Reveal delay={0.1} className="pt-12 md:pt-0 md:pl-16">
             <div className="flex items-center gap-3 mb-7">
               <Asterisk size={16} color={C.pop} />
-              <span className="text-xs uppercase tracking-[0.2em] opacity-50" style={D({ fontWeight: 700, fontSize: 10 })}>
+              <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
                 Beyond the Code
               </span>
             </div>

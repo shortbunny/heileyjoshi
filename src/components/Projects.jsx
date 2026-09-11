@@ -1,4 +1,4 @@
-import { C, D } from "../theme";
+import { C, D, BODY_FONT } from "../theme";
 import Asterisk from "./Asterisk";
 import Wave from "./Wave";
 import Reveal from "./Reveal";
@@ -6,9 +6,9 @@ import Reveal from "./Reveal";
 const PROJECTS = [
   {
     name: "Early Window Hit Predictor",
-    tag: "ML · NLP",
+    tag: "Data Analysis · AI",
     desc: "Forecasts Billboard Hot 100 performance from just the first 14 days after release, using matched sampling to adjust for artist popularity and an LLM to pull features out of lyrics. Merges data from Billboard, Spotify, Genius, and Reddit, with features designed to eliminate evaluation fraud.",
-    tech: ["Python", "LLM Features", "Matched Sampling"],
+    tech: ["Python", "Building AI", "Matched Sampling"],
     bg: C.soft,
     textColor: C.ink,
   },
@@ -34,7 +34,7 @@ export default function Projects() {
   return (
     <>
       <Wave from={C.cream} to={C.ink} />
-      <section id="projects" className="relative overflow-hidden snap-stop min-h-screen flex items-center" style={{ background: C.ink }}>
+      <section id="projects" className="relative overflow-hidden snap-stop" style={{ background: C.ink }}>
         <div className="max-w-[1400px] mx-auto px-8 md:px-14 py-20 md:py-28 w-full">
           <span
             className="absolute -left-8 bottom-0 select-none pointer-events-none leading-none"
@@ -49,7 +49,7 @@ export default function Projects() {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <Asterisk size={18} color={C.pop} />
-                  <span className="text-xs uppercase tracking-[0.2em] opacity-50" style={D({ fontWeight: 700, fontSize: 10, color: C.white })}>
+                  <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.white })}>
                     Selected Work
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export default function Projects() {
                     fontSize: "clamp(48px,8vw,112px)",
                     letterSpacing: "-0.04em",
                     color: "transparent",
-                    WebkitTextStroke: `2.5px ${C.white}`,
+                    WebkitTextStroke: `clamp(1.4px, 0.4vw, 2.5px) ${C.white}`,
                   })}
                 >
                   Built.
@@ -108,7 +108,7 @@ export default function Projects() {
                   </p>
                   <div className="flex flex-wrap gap-x-3 gap-y-1">
                     {p.tech.map((t) => (
-                      <span key={t} className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif", color: p.textColor, opacity: 0.45 }}>
+                      <span key={t} className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif", color: p.textColor, opacity: 0.65 }}>
                         {t}
                       </span>
                     ))}

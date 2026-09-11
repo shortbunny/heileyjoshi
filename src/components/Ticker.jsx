@@ -1,4 +1,4 @@
-import { C, D } from "../theme";
+import { C, D, BODY_FONT } from "../theme";
 
 const SKILLS = [
   "Python", "React", "TypeScript", "Machine Learning", "RAG Systems", "Node.js",
@@ -12,7 +12,7 @@ export default function Ticker() {
       <div className="flex whitespace-nowrap" style={{ animation: "ticker 28s linear infinite" }}>
         {[...SKILLS, ...SKILLS, ...SKILLS].map((s, i) => (
           <span key={i} className="flex items-center gap-4">
-            <span style={D({ fontWeight: 800, fontSize: 11, letterSpacing: "0.2em", color: C.cream, textTransform: "uppercase" })}>
+            <span style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 12, letterSpacing: "0.2em", color: C.cream, textTransform: "uppercase" })}>
               {s}
             </span>
             <span style={{ color: C.pop, fontSize: 18, margin: "0 8px" }}>✦</span>

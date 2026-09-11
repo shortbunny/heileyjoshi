@@ -1,4 +1,4 @@
-import { C, D } from "../theme";
+import { C, D, BODY_FONT } from "../theme";
 import Asterisk from "./Asterisk";
 import Wave from "./Wave";
 import Reveal from "./Reveal";
@@ -26,7 +26,7 @@ export default function Contact() {
             <Reveal>
               <div className="flex items-center gap-3 mb-6">
                 <Asterisk size={18} color={C.white} />
-                <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontWeight: 700, fontSize: 10, color: C.white })}>
+                <span className="text-xs uppercase tracking-[0.2em] opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.white })}>
                   Get In Touch
                 </span>
               </div>
@@ -39,7 +39,7 @@ export default function Contact() {
             <Reveal delay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
               {CONTACT_ITEMS.map((item) => (
                 <div key={item.label}>
-                  <p className="text-xs uppercase tracking-[0.18em] mb-2 opacity-60" style={D({ fontWeight: 700, fontSize: 10, color: C.white })}>
+                  <p className="text-xs uppercase tracking-[0.18em] mb-2 opacity-60" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.white })}>
                     {item.label}
                   </p>
                   <a
@@ -56,7 +56,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={0.18} className="flex flex-col md:flex-row items-start md:items-center justify-between pt-8 border-t" style={{ borderColor: "rgba(253,250,244,0.25)" }}>
-              <p className="opacity-50 text-xs uppercase tracking-widest" style={D({ fontWeight: 900, fontSize: 10, color: C.white })}>
+              <p className="opacity-70 text-xs uppercase tracking-widest" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.white })}>
                 Heiley Joshi, 2026
               </p>
               <a

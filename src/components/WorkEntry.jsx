@@ -19,13 +19,13 @@ export default function WorkEntry({ title, company, period, bullets, index }) {
               >
                 {title}
               </h3>
-              <p className="text-xs uppercase tracking-widest opacity-50 mt-1" style={D({ fontWeight: 700, fontSize: 10 })}>
+              <p className="text-xs uppercase tracking-widest opacity-70 mt-1" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11 })}>
                 {company}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-5 pl-[52px] md:pl-0">
-            <span className="text-xs opacity-40" style={{ fontFamily: BODY_FONT }}>{period}</span>
+            <span className="text-xs opacity-60" style={{ fontFamily: BODY_FONT }}>{period}</span>
             <span className="text-lg font-bold transition-transform duration-300 block" style={{ transform: open ? "rotate(45deg)" : "rotate(0)" }}>
               +
             </span>

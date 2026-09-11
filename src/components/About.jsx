@@ -27,7 +27,7 @@ export default function About() {
             <Reveal>
               <div className="flex items-center gap-3 mb-6">
                 <Asterisk size={20} color={C.pop} />
-                <span className="text-xs uppercase tracking-[0.2em] opacity-60" style={D({ fontWeight: 700, fontSize: 10, color: C.ink })}>
+                <span className="text-xs uppercase tracking-[0.2em] opacity-60" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.ink })}>
                   About
                 </span>
               </div>
@@ -38,8 +38,8 @@ export default function About() {
                 <br />
                 <span style={{ color: C.pop }}>Am.</span>
               </h2>
-              <p className="mt-8 text-xs uppercase tracking-widest opacity-50" style={D({ fontWeight: 700, fontSize: 10, color: C.ink })}>
-                BSc Software Engineering (Hons)
+              <p className="mt-8 text-xs uppercase tracking-widest opacity-70" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 11, color: C.ink })}>
+                Bachelor of Software Engineering (Hons)
                 <br />Spec. Engineering Data Science · USYD
               </p>
             </Reveal>
@@ -57,17 +57,23 @@ export default function About() {
                 </p>
               </Reveal>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-7">
                 {SKILL_GROUPS.map((g, i) => (
                   <Reveal key={g.label} delay={0.15 + i * 0.08}>
-                    <p className="text-xs uppercase tracking-[0.16em] mb-3 opacity-50" style={D({ fontWeight: 700, fontSize: 9, color: C.ink })}>
+                    <p className="text-xs uppercase tracking-[0.16em] mb-3" style={D({ fontFamily: BODY_FONT, fontWeight: 700, fontSize: 10, color: C.ink, opacity: 0.75 })}>
                       {g.label}
                     </p>
-                    {g.items.map((item) => (
-                      <p key={item} className="text-xs mb-1.5 opacity-70" style={{ fontFamily: BODY_FONT, color: C.ink }}>
-                        {item}
-                      </p>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {g.items.map((item) => (
+                        <span
+                          key={item}
+                          className="text-xs px-3 py-1.5"
+                          style={{ fontFamily: BODY_FONT, fontWeight: 700, letterSpacing: "0.02em", color: "#4A4A47", border: "1px solid #4A4A47" }}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </Reveal>
                 ))}
               </div>
