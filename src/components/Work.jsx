@@ -17,7 +17,7 @@ const ENTRIES = [
     ],
   },
   {
-    title: "Remote Web Dev Intern",
+    title: "Web Development Intern",
     company: "Teles Technological Services LLP",
     period: "Dec 2024 to Feb 2025",
     index: 2,
